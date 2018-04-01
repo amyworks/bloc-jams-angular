@@ -18,6 +18,7 @@
 		* @type {Number}
 		*/
 		SongPlayer.currentTime = null;
+		SongPlayer.volume = 80;
 		/**
 		* @desc clears the audio object file on page load or reload
 		* @type {Object}
@@ -148,6 +149,12 @@
 		        currentBuzzObject.setTime(time);
 		    }
 		};
+
+		SongPlayer.setVolume = function(volume) {
+            if (currentBuzzObject) {
+                currentBuzzObject.setVolume(volume);
+            }
+        };
 
 		/**
 		* @return Returns the SongPlayer service
