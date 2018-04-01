@@ -44,20 +44,6 @@
 			* @desc Buzz object audio file
 			* @type {Object}
 			**/
-		    if (currentBuzzObject === null) {
-		    	song = currentAlbum.songs[0];
-		    	song.playing = true;
-		    	currentBuzzObject = new buzz.sound(song.audioUrl, {
-			        formats: ['mp3'],
-			        preload: true
-			    });
-		    }else if (currentBuzzObject !== null) {
-			    currentBuzzObject = new buzz.sound(song.audioUrl, {
-			        formats: ['mp3'],
-			        preload: true
-			    });
-			}
-
 			currentBuzzObject.bind('timeupdate', function() {
 		        $rootScope.$apply(function() {
 		            SongPlayer.currentTime = currentBuzzObject.getTime();
